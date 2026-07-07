@@ -14,16 +14,16 @@ export function HouseOfStoreSection({ cards }: { cards?: HouseCard[] }) {
       <div className="flex items-center justify-between rounded-xl bg-white px-3.5 py-3">
         <Logo size={46} className="rounded-[10px]" />
         <div className="text-right">
-          <div className="text-[21px] font-extrabold leading-none text-deal">100 Years</div>
-          <div className="mt-0.5 text-[11px] font-medium text-[#c23]">of Educational Excellence</div>
+          <div className="font-anton text-[22px] leading-none text-deal">100 Years</div>
+          <div className="font-inter mt-1 text-[11px] font-bold text-[#c23] leading-none">of Educational Excellence</div>
         </div>
       </div>
 
       <div className="my-3.5 flex items-center justify-between">
-        <h2 className="text-[17px] font-medium text-white">From the House of PPD</h2>
+        <h2 className="font-urbanist text-[17px] font-extrabold text-white leading-none">From the House of PPD</h2>
         <Link
           to={ROUTES.category('books')}
-          className="flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-[11px] font-semibold text-ink shadow-sm transition-colors hover:bg-white/90"
+          className="flex items-center gap-1 rounded-full bg-white px-3 py-1.5 font-urbanist text-[11px] font-bold text-[#2a2723] shadow-sm transition-colors hover:bg-white/90"
         >
           Discover PPD
           <Icon name="arrow_forward" size={13} />
@@ -35,16 +35,16 @@ export function HouseOfStoreSection({ cards }: { cards?: HouseCard[] }) {
           <Link
             key={card.title}
             to={card.href}
-            className="flex min-h-[78px] items-start justify-between rounded-xl bg-white p-3 transition-transform hover:-translate-y-0.5"
+            className="flex min-h-[92px] items-start justify-between rounded-xl bg-white p-3 transition-transform hover:-translate-y-0.5"
           >
-            <div className="flex h-14 max-w-[78px] flex-col justify-between md:max-w-none">
-              <span className="text-[12.5px] font-semibold leading-tight text-[#2a2723]">{card.title}</span>
-              <span className="inline-flex items-center gap-0.5 text-[11px] font-semibold text-link">
+            <div className="flex flex-col justify-between h-full flex-1 pr-1.5">
+              <span className="font-urbanist text-[13.5px] font-bold leading-tight text-[#2a2723]">{card.title}</span>
+              <span className="mt-2.5 inline-flex items-center justify-center gap-0.5 rounded-full bg-[#f7941e] px-2.5 py-1 font-urbanist text-[10px] font-bold text-white shadow-sm hover:bg-[#f5860c] transition-colors max-w-[72px]">
                 Explore
-                <Icon name="arrow_forward" size={13} />
+                <Icon name="arrow_forward" size={11} />
               </span>
             </div>
-            <img src={card.image} alt="" loading="lazy" className="h-[52px] w-10 shrink-0 rounded-[7px] object-cover" />
+            <img src={card.image} alt={card.title} loading="lazy" className="h-[68px] w-12 shrink-0 rounded-[7px] object-cover" />
           </Link>
         ))}
       </div>

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import type { Banner } from '@/types'
-import { Icon } from '@/components/ui/Icon'
 import { Dots } from '@/components/ui/Dots'
 import { Skeleton } from '@/components/ui/Skeleton'
 

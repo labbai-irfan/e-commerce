@@ -49,9 +49,9 @@ export const monsoonTiles: CategoryTile[] = [
 ]
 
 export const yogaTiles: CategoryTile[] = [
-  { label: 'Mats', image: '/images/image%2020.png', href: ROUTES.product('p14') },
-  { label: 'Headbands', image: '/images/image%2023.png', href: ROUTES.category('for-kids') },
-  { label: 'Towels', image: '/images/image%2024.png', href: ROUTES.product('p15') },
+  { label: 'Mats', image: '/images/image%2023.png', href: ROUTES.product('p14') },
+  { label: 'Headbands', image: '/images/image%2024.png', href: ROUTES.category('for-kids') },
+  { label: 'Towels', image: '/images/image%2026.png', href: ROUTES.product('p15') },
   { label: 'Bottles', image: '/images/image%2025.png', href: ROUTES.product('p16') },
 ]
 
@@ -67,7 +67,7 @@ export const yogaPromos: PromoCard[] = [
     name: 'Towels',
     desc: 'Soft, absorbent towels to keep you fresh during every session.',
     price: 49,
-    image: '/images/image%2023.png',
+    image: '/images/image_towel.png',
     productId: 'p15',
   },
 ]

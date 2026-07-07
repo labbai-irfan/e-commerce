@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { ROUTES } from '@/lib/constants'
 import { useCartCount } from '@/store/cart.store'
-import { Icon } from '@/components/ui/Icon'
 
 interface CartChipProps {
   /** 'light' = white pill w/ gold bag (most headers); 'solid' = gold pill w/ white bag (cart/orders) */

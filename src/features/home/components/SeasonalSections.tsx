@@ -34,17 +34,17 @@ function TileStrip({
               <div className="flex w-full flex-1 items-center justify-center px-2">
                 <img src={tile.image} alt="" loading="lazy" className="h-[76px] w-full object-contain" />
               </div>
-              <span className="text-[11px] font-medium text-[#2a2723]">{tile.label}</span>
+              <span className="font-urbanist text-[11px] font-bold text-[#2a2723]">{tile.label}</span>
             </>
           ) : (
             <>
               <span
-                className="w-full overflow-hidden rounded-xl bg-white p-1.5 transition-transform hover:-translate-y-0.5"
+                className="flex w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 transition-transform hover:-translate-y-0.5"
                 style={{ height: tileHeight }}
               >
-                <img src={tile.image} alt="" loading="lazy" className="size-full rounded-lg object-cover" />
+                <img src={tile.image} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
               </span>
-              <span className="text-[10.5px] font-medium text-[#3a4045]">{tile.label}</span>
+              <span className="font-urbanist text-[11px] font-bold text-[#2a2723]">{tile.label}</span>
             </>
           )}
         </Link>
@@ -83,37 +83,35 @@ function YogaPromoCard({ promo }: { promo: PromoCard }) {
   }
 
   return (
-    <div className="flex min-h-[135px] flex-1 overflow-hidden rounded-[18px] bg-[#fdfaf6] shadow-[0_4px_12px_rgba(120,90,40,0.06)] transition-transform hover:-translate-y-0.5">
+    <div className="flex min-h-[142px] flex-1 overflow-hidden rounded-[18px] bg-[#fdfaf6] p-3 shadow-[0_4px_12px_rgba(120,90,40,0.06)] transition-transform hover:-translate-y-0.5">
       {/* Left Column */}
-      <div className="flex flex-1 flex-col justify-between p-3 pr-1">
+      <div className="flex flex-1 flex-col justify-between pr-2">
         <button
           type="button"
           onClick={() => navigate(ROUTES.product(promo.productId))}
           className="cursor-pointer text-left w-full"
         >
-          <div className="text-[12.5px] font-bold leading-snug text-[#2a2723]">{promo.name}</div>
-          <p className="mt-1 text-[10px] leading-[1.35] text-[#8c857c]">{promo.desc}</p>
+          <div className="font-urbanist text-[14px] font-bold leading-tight text-[#2a2723]">{promo.name}</div>
+          <p className="font-inter text-[10.5px] leading-[1.3] text-[#736c63] mt-1 line-clamp-2 min-h-[28px]">{promo.desc}</p>
         </button>
-        <div className="mt-2 flex flex-col justify-end">
-          <div className="text-[10px] text-[#8c857c]">Starting From</div>
-          <div className="mt-0.5 text-[17px] font-bold leading-none text-[#2a2723]">
+        <div className="mt-1">
+          <div className="font-inter text-[9px] text-[#8c857c] font-medium leading-none">Starting From</div>
+          <div className="font-inter mt-0.5 text-[18px] font-extrabold leading-none text-[#2a2723]">
             {formatCurrency(promo.price)}
           </div>
-        </div>
-      </div>
-
-      {/* Right Column */}
-      <div className="flex w-[90px] shrink-0 flex-col items-center justify-between bg-white p-2">
-        <div className="pointer-events-none flex h-[72px] w-full items-center justify-center">
-          <img src={promo.image} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
         </div>
         <button
           type="button"
           onClick={handleAdd}
-          className="cursor-pointer flex w-full items-center justify-center gap-[2px] rounded-full bg-[#FBAA2E] py-[5.5px] text-[10.5px] font-bold text-white shadow-[0_3px_10px_rgba(251,170,46,0.35)] transition-transform hover:scale-105"
+          className="cursor-pointer mt-2.5 flex items-center justify-center rounded-full bg-[#f7941e] py-1.5 font-urbanist text-[11px] font-bold text-white shadow-[0_3px_10px_rgba(247,148,30,0.25)] transition-transform hover:scale-102"
         >
           Add to Cart
         </button>
+      </div>
+
+      {/* Right Column */}
+      <div className="flex w-[80px] shrink-0 items-center justify-center">
+        <img src={promo.image} alt={promo.name} loading="lazy" className="max-h-[85px] max-w-full object-contain" />
       </div>
     </div>
   )

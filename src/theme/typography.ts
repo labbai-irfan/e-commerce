@@ -4,6 +4,10 @@
  */
 export const fontFamily = {
   sans: '"Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
+  poppins: '"Poppins", sans-serif',
+  urbanist: '"Urbanist", sans-serif',
+  inter: '"Inter", sans-serif',
+  anton: '"Anton", sans-serif',
 } as const
 
 export const fontWeight = {

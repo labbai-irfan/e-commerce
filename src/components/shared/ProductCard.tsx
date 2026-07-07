@@ -4,7 +4,6 @@ import { cn, formatCurrency } from '@/lib/utils'
 import { ROUTES } from '@/lib/constants'
 import type { Product } from '@/types'
 import { useCartStore } from '@/store/cart.store'
-import { Icon } from '@/components/ui/Icon'
 import { RatingBadge } from '@/components/ui/Rating'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { ProductBadge } from '@/components/shared/ProductBadge'
@@ -50,9 +49,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
           {product.title}
         </h3>
         <RatingBadge rating={product.rating} count={product.ratingCount} className="mt-1" />
-        <s className="mt-1.5 text-[11px] text-faint-foreground">{formatCurrency(product.mrp)}</s>
-        <div className="mt-0.5 flex items-center justify-between">
-          <span className="text-[15px] font-bold text-foreground">{formatCurrency(product.price)}</span>
+        <s className="mt-1 text-[10px] text-faint-foreground font-inter block leading-none">{formatCurrency(product.mrp)}</s>
+        <div className="mt-1 flex items-center justify-between gap-1">
+          <span className="font-urbanist text-[14px] font-extrabold text-foreground shrink-0 leading-none">{formatCurrency(product.price)}</span>
           <button
             type="button"
             aria-label={`Add ${product.title} to cart`}
@@ -66,9 +65,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
               addItem(product)
               toast.success('Added to cart')
             }}
-            className="flex size-[34px] items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow transition-transform hover:scale-110 active:scale-95 cursor-pointer"
+            className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow transition-transform hover:scale-110 active:scale-95 cursor-pointer"
           >
-            <img src="/icons/cart.svg" alt="" className="size-[17px] object-contain" />
+            <img src="/icons/cart.svg" alt="" className="size-4 object-contain" />
           </button>
         </div>
       </div>

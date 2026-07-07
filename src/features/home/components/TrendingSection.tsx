@@ -6,7 +6,6 @@ import type { Product } from '@/types'
 import { Icon } from '@/components/ui/Icon'
 import { Dots } from '@/components/ui/Dots'
 import { Skeleton } from '@/components/ui/Skeleton'
-import { SectionHeader } from '@/components/shared/SectionHeader'
 
 function TrendingCard({ product }: { product: Product }) {
   return (
@@ -48,13 +47,19 @@ export function TrendingSection() {
       className="bg-grad-trending overflow-hidden rounded-[20px] bg-cover bg-center px-4 py-[18px] md:px-6"
       style={{ backgroundImage: "url('/components/bg3.png')" }}
     >
-      <SectionHeader
-        title="Trending Products"
-        subtitle="Top Picks This Week"
-        viewAllHref={`${ROUTES.allProducts}?tag=trending`}
-        viewAllTone="pill"
-        className="mb-3.5"
-      />
+      <div className="mb-4 flex items-center justify-between rounded-[20px] border border-white/20 bg-white/20 px-5 py-3.5 backdrop-blur-md">
+        <div className="flex flex-col">
+          <h2 className="text-[17px] font-bold text-[#24211e] leading-tight">Trending Products</h2>
+          <p className="text-[12px] font-medium text-[#24211e] mt-0.5">Top Picks This Week</p>
+        </div>
+        <Link
+          to={`${ROUTES.allProducts}?tag=trending`}
+          className="flex items-center gap-1 rounded-full bg-[#fdf1e1] px-[18px] py-[7px] text-[11.5px] font-bold text-[#24211e] shadow-[0_2px_10px_rgba(0,0,0,0.06)] transition-transform hover:scale-105"
+        >
+          View All
+          <Icon name="arrow_forward" size={14} />
+        </Link>
+      </div>
       <div
         ref={trackRef}
         onScroll={(e) => {
