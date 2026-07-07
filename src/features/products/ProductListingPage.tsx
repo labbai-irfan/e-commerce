@@ -137,11 +137,6 @@ export default function ProductListingPage() {
         <BannerCarousel banners={banners.data} loading={banners.isPending} />
       </div>
 
-      {/* Decorative image break */}
-      <div className="h-[120px] w-full overflow-hidden rounded-[20px]">
-        <img src="https://picsum.photos/seed/ppd-monsoon-bg/800/400" alt="Background" className="size-full object-cover" />
-      </div>
-
       <RecommendedSection />
       
       <div className="py-2">
