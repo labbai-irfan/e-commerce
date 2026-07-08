@@ -13,7 +13,7 @@ import { SectionHeader } from '@/components/shared/SectionHeader'
 import { QuickCategories } from '@/features/home/components/QuickCategories'
 import { TrendingSection } from '@/features/home/components/TrendingSection'
 import { HouseOfStoreSection } from '@/features/home/components/HouseOfStoreSection'
-import { MonsoonSection, YogaSection } from '@/features/home/components/SeasonalSections'
+import { YogaSection } from '@/features/home/components/SeasonalSections'
 import { BundleBanner, PackagesSection } from '@/features/home/components/PackagesSection'
 
 function greeting(): string {
@@ -76,7 +76,6 @@ export default function HomePage() {
       <QuickCategories />
       <TrendingSection />
       <HouseOfStoreSection cards={home.data?.houseCards} />
-      <MonsoonSection tiles={home.data?.monsoonTiles} />
       <RecommendedSection />
       <YogaSection tiles={home.data?.yogaTiles} promos={home.data?.yogaPromos} />
       <BundleBanner />

@@ -189,11 +189,25 @@
   --color-rule: var(--rule);
   --color-rule-soft: var(--rule-soft);
 
-  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
+  /* Families audited from design/new/Mobile Homepage.svg:
+     Urbanist = display (headings/titles/prices/buttons), Inter = body */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Urbanist", "Inter", sans-serif;
   --font-urbanist: "Urbanist", sans-serif;
   --font-inter: "Inter", sans-serif;
-  --font-anton: "Anton", sans-serif;
+  /* Legacy aliases — Anton/Poppins are not in the new design; kept so
+     stray font-anton/font-poppins classes degrade to the audited stack */
+  --font-poppins: "Urbanist", sans-serif;
+  --font-anton: "Urbanist", sans-serif;
+
+  /* Semantic typography tokens (role → family) */
+  --font-heading: "Urbanist", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-product: "Urbanist", sans-serif;
+  --font-price: "Urbanist", sans-serif;
+  --font-button: "Urbanist", sans-serif;
+  --font-label: "Urbanist", sans-serif;
+  --font-caption: "Inter", sans-serif;
 
   --radius-card: 1rem;               /* 16px cards      */
   --radius-tile: 0.75rem;            /* 12px inner tiles */
@@ -283,14 +297,6 @@
   }
   .bg-grad-red {
     background: linear-gradient(160deg, #e5433f, #d42e2a);
-  }
-  .bg-grad-monsoon {
-    background-color: #cfe6ef;
-    background-image:
-      radial-gradient(120% 90% at 15% 8%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 45%),
-      radial-gradient(90% 80% at 88% 18%, rgba(180, 214, 233, 0.75) 0%, rgba(180, 214, 233, 0) 50%),
-      radial-gradient(110% 100% at 70% 100%, rgba(120, 178, 214, 0.55) 0%, rgba(120, 178, 214, 0) 55%),
-      linear-gradient(120deg, #bcdcec, #dfeef4 55%, #cfe4ee);
   }
   .bg-grad-yoga {
     background: linear-gradient(120deg, #e6def4, #f0ebf7);

@@ -8,67 +8,21 @@ import { useCartStore } from '@/store/cart.store'
 import { Dots } from '@/components/ui/Dots'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 
-function TileStrip({
-  tiles,
-  tileHeight = 74,
-  glass = false,
-}: {
-  tiles: CategoryTile[]
-  tileHeight?: number
-  glass?: boolean
-}) {
+function TileStrip({ tiles, tileHeight = 74 }: { tiles: CategoryTile[]; tileHeight?: number }) {
   return (
-    <div className={glass ? "flex gap-[9px]" : "flex gap-2.5"}>
+    <div className="flex gap-2.5">
       {tiles.map((tile) => (
-        <Link
-          key={tile.label}
-          to={tile.href}
-          className={
-            glass
-              ? 'flex flex-1 flex-col items-center gap-2.5 rounded-[14px] border border-white/60 bg-white/35 pt-2.5 pb-[15px] shadow-[0_4px_14px_rgba(90,130,160,0.18)] backdrop-blur-md transition-transform hover:-translate-y-0.5'
-              : 'flex flex-1 flex-col items-center gap-1.5'
-          }
-        >
-          {glass ? (
-            <>
-              <div className="flex w-full flex-1 items-center justify-center px-2">
-                <img src={tile.image} alt="" loading="lazy" className="h-[76px] w-full object-contain" />
-              </div>
-              <span className="font-urbanist text-[11px] font-bold text-[#2a2723]">{tile.label}</span>
-            </>
-          ) : (
-            <>
-              <span
-                className="flex w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 transition-transform hover:-translate-y-0.5"
-                style={{ height: tileHeight }}
-              >
-                <img src={tile.image} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
-              </span>
-              <span className="font-urbanist text-[11px] font-bold text-[#2a2723]">{tile.label}</span>
-            </>
-          )}
+        <Link key={tile.label} to={tile.href} className="flex flex-1 flex-col items-center gap-1.5">
+          <span
+            className="flex w-full items-center justify-center overflow-hidden rounded-xl bg-white p-2.5 transition-transform hover:-translate-y-0.5"
+            style={{ height: tileHeight }}
+          >
+            <img src={tile.image} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
+          </span>
+          <span className="font-urbanist text-[11px] font-bold text-[#2a2723]">{tile.label}</span>
         </Link>
       ))}
     </div>
-  )
-}
-
-/** "Monsoon Essentials" — blue-tinted seasonal strip. */
-export function MonsoonSection({ tiles }: { tiles?: CategoryTile[] }) {
-  if (!tiles?.length) return null
-  return (
-    <section>
-      <SectionHeader
-        title="Monsoon Essentials"
-        subtitle="Stay Ready, Stay Protected this Season"
-        viewAllHref={ROUTES.category('for-kids')}
-        viewAllTone="glass"
-      />
-      <div className="bg-grad-monsoon overflow-hidden rounded-2xl p-3 md:p-5">
-        <TileStrip tiles={tiles} tileHeight={74} glass />
-      </div>
-      <Dots count={3} active={0} className="mt-3" />
-    </section>
   )
 }
 

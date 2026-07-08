@@ -1,7 +1,7 @@
 import { banners, categories } from '@/mocks/categories'
 import { products } from '@/mocks/products'
 import { coupons, reviews } from '@/mocks/reviews'
-import { houseCards, monsoonTiles, packages, yogaPromos, yogaTiles } from '@/mocks/home'
+import { houseCards, packages, yogaPromos, yogaTiles } from '@/mocks/home'
 import { sleep } from '@/lib/utils'
 import type { Banner, Category, Coupon, Paginated, Product, ProductQuery, Review } from '@/types'
 
@@ -103,7 +103,7 @@ export const catalogRepository = {
   /** Static content blocks for the designed home sections. */
   async getHomeContent() {
     await sleep(200)
-    return { houseCards, monsoonTiles, yogaTiles, yogaPromos, packages }
+    return { houseCards, yogaTiles, yogaPromos, packages }
   },
 
   async getReviews(productId: string): Promise<Review[]> {

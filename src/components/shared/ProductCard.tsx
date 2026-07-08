@@ -26,11 +26,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
     <Link
       to={ROUTES.product(product.id)}
       className={cn(
-        'group flex flex-col rounded-[14px] bg-card p-2 shadow-card transition-shadow duration-300 hover:shadow-card-hover',
+        'group flex w-full min-h-[277px] flex-col rounded-[15px] border border-border bg-card p-2 shadow-card transition-shadow duration-300 hover:shadow-card-hover',
         className,
       )}
     >
-      <div className="relative aspect-square overflow-hidden rounded-[10px] bg-surface-placeholder dark:bg-muted">
+      <div className="relative aspect-square overflow-hidden bg-surface-placeholder dark:bg-muted">
         <img
           src={product.images[0]}
           alt={product.title}
@@ -77,8 +77,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
 
 export function ProductCardSkeleton({ className }: { className?: string }) {
   return (
-    <div className={cn('rounded-[14px] bg-card p-2 shadow-card', className)}>
-      <Skeleton className="aspect-square rounded-[10px]" />
+    <div className={cn('min-h-[277px] rounded-[15px] border border-border bg-card p-2 shadow-card', className)}>
+      <Skeleton className="aspect-square rounded-none" />
       <div className="space-y-1.5 px-0.5 py-2">
         <Skeleton className="h-4 w-16 rounded-full" />
         <Skeleton className="h-3.5 w-full" />

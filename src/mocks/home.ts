@@ -40,14 +40,6 @@ export const houseCards: HouseCard[] = [
   { title: 'Cyber World', image: img('ppd-cyber', 160, 200), href: ROUTES.category('books') },
 ]
 
-/** "Monsoon Essentials" tiles. */
-export const monsoonTiles: CategoryTile[] = [
-  { label: 'Umbrella', image: '/images/image%2010.png', href: ROUTES.product('p12') },
-  { label: 'Raincoats', image: '/images/image%2011.png', href: ROUTES.product('p13') },
-  { label: 'Bag covers', image: '/images/image%2012.png', href: ROUTES.category('for-kids') },
-  { label: 'Bottles', image: '/images/image%2013.png', href: ROUTES.product('p16') },
-]
-
 export const yogaTiles: CategoryTile[] = [
   { label: 'Mats', image: '/images/image%2023.png', href: ROUTES.product('p14') },
   { label: 'Headbands', image: '/images/image%2024.png', href: ROUTES.category('for-kids') },

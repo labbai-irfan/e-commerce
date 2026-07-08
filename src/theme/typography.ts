@@ -1,13 +1,18 @@
 /**
- * Typography tokens — Poppins, with the exact sizes/weights the design uses.
- * Named text roles map to the recurring styles across screens.
+ * Typography tokens — audited from design/new/Mobile Homepage.svg
+ * (vector letterform matching + pixel measurement at 3× render).
+ *
+ * Two families only:
+ *  • Urbanist — display: headings, product titles, prices, buttons,
+ *    badges, chips, category/tile labels
+ *  • Inter — body: greeting, subtitles, descriptions, captions,
+ *    metadata, search placeholder
  */
 export const fontFamily = {
-  sans: '"Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
-  poppins: '"Poppins", sans-serif',
+  sans: '"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
+  display: '"Urbanist", "Inter", sans-serif',
   urbanist: '"Urbanist", sans-serif',
   inter: '"Inter", sans-serif',
-  anton: '"Anton", sans-serif',
 } as const
 
 export const fontWeight = {
@@ -18,36 +23,59 @@ export const fontWeight = {
   extrabold: 800,
 } as const
 
-/** Font sizes (px) present in the design. */
+/** Font sizes (px) measured in the 428px-wide design frame. */
 export const fontSize = {
-  '2xs': 8.5,
-  xs: 10,
-  '11': 11,
+  '2xs': 10,
+  xs: 11,
   '12': 12,
-  '12.5': 12.5,
   sm: 13,
-  '13.5': 13.5,
   base: 14,
   '15': 15,
   md: 16,
-  lg: 17,
-  xl: 19,
-  '2xl': 21,
-  '3xl': 22,
-  hero: 26,
-  price: 27,
+  lg: 18,
+  xl: 20,
+  '2xl': 22,
+  '3xl': 28,
+  greetingName: 34,
 } as const
 
-/** Semantic text roles → (size, weight) used repeatedly across screens. */
+/** Semantic text roles → (family, size, weight) from the Mobile Homepage. */
 export const textRole = {
-  greeting: { size: fontSize.hero, weight: fontWeight.bold },
-  sectionTitle: { size: fontSize.md, weight: fontWeight.bold },
-  sectionSubtitle: { size: fontSize['12'], weight: fontWeight.regular },
-  productTitle: { size: fontSize.xs, weight: fontWeight.medium },
-  productPrice: { size: fontSize['15'], weight: fontWeight.bold },
-  pdpTitle: { size: fontSize['2xl'], weight: fontWeight.bold },
-  pdpPrice: { size: fontSize.price, weight: fontWeight.bold },
-  cta: { size: fontSize['15'], weight: fontWeight.bold },
+  /* Header */
+  greeting: { family: fontFamily.inter, size: fontSize['2xl'], weight: fontWeight.medium }, // "Good Evening,"
+  greetingName: { family: fontFamily.inter, size: fontSize.greetingName, weight: fontWeight.extrabold }, // "Ameen"
+  tagline: { family: fontFamily.inter, size: fontSize.md, weight: fontWeight.regular }, // "Everything for School"
+  logoCaption: { family: fontFamily.inter, size: fontSize.xs, weight: fontWeight.medium }, // "India's Trusted…"
+
+  /* Hero banner */
+  heroTitle: { family: fontFamily.urbanist, size: fontSize['3xl'], weight: fontWeight.extrabold }, // "Smart School Shopping"
+  heroSubtitle: { family: fontFamily.inter, size: fontSize['2xs'], weight: fontWeight.medium }, // "Find Everything…"
+  heroCta: { family: fontFamily.urbanist, size: fontSize.base, weight: fontWeight.bold }, // "Explore Now"
+
+  /* Sections */
+  sectionTitle: { family: fontFamily.urbanist, size: fontSize.xl, weight: fontWeight.bold }, // "Trending Products"
+  sectionSubtitle: { family: fontFamily.inter, size: fontSize.sm, weight: fontWeight.medium }, // "Top Picks This Week"
+  viewAll: { family: fontFamily.urbanist, size: fontSize.base, weight: fontWeight.semibold }, // "View All →"
+  categoryChip: { family: fontFamily.urbanist, size: fontSize.sm, weight: fontWeight.semibold }, // "Books", "Bags"
+  tileLabel: { family: fontFamily.urbanist, size: fontSize.md, weight: fontWeight.bold }, // "School Books", "Yoga"
+  cardLabel: { family: fontFamily.urbanist, size: fontSize.sm, weight: fontWeight.semibold }, // "Umbrella", "Mats"
+
+  /* Product cards */
+  productTitle: { family: fontFamily.urbanist, size: fontSize['15'], weight: fontWeight.semibold },
+  productMeta: { family: fontFamily.inter, size: fontSize.sm, weight: fontWeight.medium }, // "1.5K+ bought"
+  rating: { family: fontFamily.urbanist, size: fontSize.base, weight: fontWeight.semibold }, // "4.8 (49)"
+  price: { family: fontFamily.urbanist, size: fontSize.xl, weight: fontWeight.extrabold }, // "₹299"
+  oldPrice: { family: fontFamily.inter, size: fontSize['12'], weight: fontWeight.medium }, // struck "₹400"
+  badge: { family: fontFamily.urbanist, size: fontSize.sm, weight: fontWeight.bold }, // "PPD Original", "Save 22%"
+
+  /* Buttons */
+  button: { family: fontFamily.urbanist, size: fontSize.base, weight: fontWeight.semibold }, // "Add to Cart", "Explore"
+
+  /* Misc */
+  descBody: { family: fontFamily.inter, size: fontSize.xs, weight: fontWeight.regular }, // card descriptions
+  startingFrom: { family: fontFamily.inter, size: fontSize.xs, weight: fontWeight.medium },
+  searchPlaceholder: { family: fontFamily.inter, size: fontSize['15'], weight: fontWeight.regular },
+  centennial: { family: fontFamily.urbanist, size: fontSize['3xl'], weight: fontWeight.extrabold }, // "100 Years"
 } as const
 
 export type FontSizeKey = keyof typeof fontSize
